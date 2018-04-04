@@ -50,6 +50,7 @@ class TaskController extends Controller
      */
     public function editAction(Task $task, Request $request)
     {
+        $this->denyAccessUnlessGranted('edit', $task);
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
@@ -86,6 +87,8 @@ class TaskController extends Controller
      */
     public function deleteTaskAction(Task $task)
     {
+        $this->denyAccessUnlessGranted('delete', $task);
+
         $em = $this->getDoctrine()->getManager();
         $em->remove($task);
         $em->flush();

@@ -4,6 +4,15 @@ parameters:
 #    parameter_name: value
 
 services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  AppBundle\:
+    resource: '../../src/AppBundle/*'
+    exclude: '../../src/AppBundle/{Entity,Repository}'
+
   command.fixtures.load:
     class: AppBundle\Command\UpdateOldTasksCommand
     arguments:
