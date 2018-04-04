@@ -45,6 +45,11 @@ class User implements UserInterface
      */
     private $tasks;
 
+    /**
+     * @ORM\Column(name="roles", type="array")
+     */
+    private $roles = array();
+
     public function __construct()
     {
         $this->tasks = new ArrayCollection();
@@ -137,7 +142,11 @@ class User implements UserInterface
      */
     public function getRoles()
     {
-        return array('ROLE_USER');
+        if (empty($this->roles)) {
+            return ['ROLE_USER'];
+        }
+
+        return $this->roles;
     }
 
     /**

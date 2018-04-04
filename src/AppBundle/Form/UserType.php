@@ -8,9 +8,22 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class UserType extends AbstractType
 {
+    private $roles = [];
+
+    public function __construct($hierarchyRoles)
+    {
+        $roles = array();
+        array_walk_recursive($hierarchyRoles, function($val, $key) use (&$roles) {
+            $roles[$val] = $val;
+        });
+
+        return $this->roles = array_unique($roles);
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -23,6 +36,12 @@ class UserType extends AbstractType
                 'second_options' => ['label' => 'Tapez le mot de passe à nouveau'],
             ])
             ->add('email', EmailType::class, ['label' => 'Adresse email'])
+            ->add('roles', ChoiceType::class, array(
+                'label' => 'Role',
+                'multiple' => true,
+                'expanded' => true,
+                'choices' => $this->roles
+            ))
         ;
     }
 }
