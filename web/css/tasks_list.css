@@ -1,0 +1,19 @@
+.filters .filter { cursor: pointer; }
+.card-grid .grid-sizer, .card-grid .grid-item { margin-bottom: 20px; }
+
+.card-grid .grid-sizer, .card-grid .grid-item { width: 30%; }
+
+@media all and (max-width: 575px) {
+    .container { max-width: 100%;}
+    .card-grid .grid-sizer, .card-grid .grid-item { width: 95%; }
+}
+
+@media all and (min-width: 576px) and (max-width: 767px) {
+    .container { max-width: 100%;}
+    .card-grid .grid-sizer, .card-grid .grid-item { width: 45%; }
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+    .card-grid .grid-sizer, .card-grid .grid-item { width: 45%; }
+}
+

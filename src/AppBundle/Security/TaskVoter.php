@@ -60,7 +60,7 @@ class TaskVoter extends Voter
 
     private function canEdit(Task $task, User $user)
     {
-        return $user === $task->getAuthor();
+        return $task->isAuthor($user);
     }
 
     private function canDelete(Task $task, User $user, TokenInterface $token)

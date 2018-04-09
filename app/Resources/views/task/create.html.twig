@@ -1,13 +1,37 @@
 {% extends 'base.html.twig' %}
 
+{% block header_title %}
+    Créer une tâche
+{% endblock %}
+
+{% block header_content %}
+    Remplissez le formulaire pour ajouter une tâche
+{% endblock %}
+
 {% block body %}
     <div class="row">
-        {{ form_start(form, {'action' : path('task_create')}) }}
-            {{ form_widget(form) }}
+        <div class="col-md-6">
+            {% include "partials/_breadcrumbs.html.twig" with { 'links' : {
+                'Dashboard' : path('homepage'),
+                'Tâches en cours': path('task_list'),
+                'Créer une tâche': path('task_create')
+            }} %}
+        </div>
+        <div class="col-md-6 text-right">
+            <a href="{{ path('task_list') }}" class="btn btn-secondary">
+                <span class="fas fa-tasks"></span> Retour à la liste des tâches
+            </a>
+        </div>
+    </div>
 
-            <button type="submit" class="btn btn-success pull-right">Ajouter</button>
-        {{ form_end(form) }}
 
-        <a href="{{ path('task_list') }}" class="btn btn-primary">Retour à la liste des tâches</a>
+    <div class="row">
+        <div class="col">
+            {{ form_start(form, {'action' : path('task_create')}) }}
+                {{ form_widget(form) }}
+
+                <button type="submit" class="btn btn-info">Ajouter</button>
+            {{ form_end(form) }}
+        </div>
     </div>
 {% endblock %}
