@@ -1,14 +1,53 @@
 {% extends 'base.html.twig' %}
 
+{% block header_class %}
+    big
+{% endblock %}
+
 {% block header_title %}
-    <h1>Bienvenue sur Todo List, l'application vous permettant de gérer l'ensemble de vos tâches sans effort !</h1>
+    Bienvenue sur Todo List
+{% endblock %}
+
+{% block header_content %}
+    L'application vous permettant de gérer l'ensemble de vos tâches sans effort !
 {% endblock %}
 
 {% block body %}
-
     <div class="row">
-        <a href="{{ path('task_create') }}" class="btn btn-success">Créer une nouvelle tâche</a>
-        <a href="{{ path('task_list') }}" class="btn btn-info">Consulter la liste des tâches à faire</a>
-        <a href="" class="btn btn-secondary">Consulter la liste des tâches terminées</a>
+        <div class="col-sm-{% if is_granted("ROLE_ADMIN") %}6{% else %}12{% endif %}">
+            <div class="card bg-light">
+                <h5 class="card-header"><span class="fas fa-tasks"></span> Tâches</h5>
+                <div class="card-body">
+                    <p class="card-text">Gestion des tâches.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{{ path('task_create') }}" class="btn btn-secondary">
+                        <span class="fas fa-plus"></span> Créer
+                    </a>
+                    <a href="{{ path('task_list') }}" class="btn btn-secondary">
+                        <span class="fas fa-tasks"></span> Consulter
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {% if is_granted("ROLE_ADMIN") %}
+            <div class="col-sm-6">
+                <div class="card bg-light">
+                    <h5 class="card-header"><span class="fas fa-users"></span> Utilisateurs</h5>
+                    <div class="card-body">
+                        <p class="card-text">Gestion des utilisateurs.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{ path('user_create') }}" class="btn btn-secondary">
+                            <span class="fas fa-user-plus"></span> Créer
+                        </a>
+                        <a href="{{ path('user_list') }}" class="btn btn-secondary">
+                            <span class="fas fa-users"></span> Gérer
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

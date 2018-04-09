@@ -1,0 +1,7 @@
+<ol class="breadcrumb text-ellipsis">
+    {% for label, link in links %}
+        <li class="breadcrumb-item {% if loop.last %}active{% endif %}">
+            <a href="{{ link }}">{{ label }}</a>
+        </li>
+    {% endfor %}
+</ol>

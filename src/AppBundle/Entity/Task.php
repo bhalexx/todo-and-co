@@ -170,4 +170,14 @@ class Task
     {
         return 'anonymous' === strtolower($this->getAuthor()->getUsername());
     }
+
+    /**
+     * Get whether given user is task author
+     *
+     * @return bool
+     */
+    public function isAuthor(User $author)
+    {
+        return $this->getAuthor() === $author;
+    }
 }

@@ -1,0 +1,36 @@
+body {
+    padding-top: 66px;
+}
+
+.navbar img {
+    height: 50px;
+}
+
+.jumbotron {
+    position: relative;
+}
+
+.jumbotron.big {
+    padding: 8rem 2rem;
+}
+
+.jumbotron .bg {
+    margin-bottom: 0;
+    opacity: 0.3;
+    color: #fff;
+    background: #000 url('../img/todolist_homepage.jpg') top center no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.badge { font-weight: 400; }
+
+#todolist_footer {
+    margin: 50px 0;
+}

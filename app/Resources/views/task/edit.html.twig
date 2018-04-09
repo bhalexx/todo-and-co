@@ -1,11 +1,36 @@
 {% extends 'base.html.twig' %}
 
+{% block header_title %}
+    Modifier la tâche <i>{{ task.title }}</i>
+{% endblock %}
+
+{% block header_content %}
+    Remplissez le formulaire pour modifier la tâche
+{% endblock %}
+
 {% block body %}
     <div class="row">
-        {{ form_start(form, {'action' : path('task_edit', { 'id' : task.id })}) }}
-            {{ form_widget(form) }}
+        <div class="col-md-6">
+            {% include "partials/_breadcrumbs.html.twig" with { 'links' : {
+                'Dashboard' : path('homepage'),
+                'Tâches en cours': path('task_list'),
+                (task.title): path('task_edit', { id: task.id })
+            }} %}
+        </div>
+        <div class="col-md-6 text-right">
+            <a href="{{ path('task_list') }}" class="btn btn-secondary">
+                <span class="fas fa-tasks"></span> Retour à la liste des tâches
+            </a>
+        </div>
+    </div>
 
-            <button type="submit" class="btn btn-success pull-right">Modifier</button>
-        {{ form_end(form) }}
+    <div class="row">
+        <div class="col">
+            {{ form_start(form, {'action' : path('task_edit', { 'id' : task.id })}) }}
+                {{ form_widget(form) }}
+
+                <button type="submit" class="btn btn-info">Modifier</button>
+            {{ form_end(form) }}
+        </div>
     </div>
 {% endblock %}

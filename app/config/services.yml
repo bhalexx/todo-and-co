@@ -24,3 +24,9 @@ services:
   AppBundle\Form\UserType:
     arguments: ['%security.role_hierarchy.roles%']
     tags: ['form.type']
+
+  twigdate.listener_request:
+    class: AppBundle\Service\TwigDateRequestListener
+    arguments: ["@twig"]
+    tags:
+      - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }

@@ -1,14 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block header_title %}<h1>Créer un utilisateur</h1>{% endblock %}
-{% block header_img %}{% endblock %}
+{% block header_title %}
+    Créer un utilisateur
+{% endblock %}
+
+{% block header_content %}
+    Remplissez le formulaire pour ajouter un utilisateur
+{% endblock %}
 
 {% block body %}
     <div class="row">
-        {{ form_start(form, {'action' : path('user_create')}) }}
-            {{ form_widget(form) }}
+        <div class="col-md-6">
+            {% include "partials/_breadcrumbs.html.twig" with { 'links' : {
+                'Dashboard' : path('homepage'),
+                'Utilisateurs': path('user_list'),
+                'Créer un utilisateur': path('user_create')
+            }} %}
+        </div>
+        <div class="col-md-6 text-right">
+            <a href="{{ path('user_list') }}" class="btn btn-secondary">
+                <span class="fas fa-users"></span> Retour à la liste d'utilisateurs
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_start(form, {'action' : path('user_create')}) }}
+                {{ form_widget(form) }}
 
-            <button type="submit" class="btn btn-success pull-right">Ajouter</button>
-        {{ form_end(form) }}
+                <button type="submit" class="btn btn-info">Ajouter</button>
+            {{ form_end(form) }}
+        </div>
     </div>
 {% endblock %}

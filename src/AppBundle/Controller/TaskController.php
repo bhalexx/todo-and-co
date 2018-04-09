@@ -77,7 +77,9 @@ class TaskController extends Controller
         $task->toggle(!$task->isDone());
         $this->getDoctrine()->getManager()->flush();
 
-        $this->addFlash('success', sprintf('La tâche %s a bien été marquée comme faite.', $task->getTitle()));
+        // Different feedback message according to new task flag
+        $feedback = $task->isDone() ? 'La tâche "%s" a bien été marquée comme terminée.' : 'La tâche "%s" a bien été marquée en cours.';
+        $this->addFlash('success', sprintf($feedback, $task->getTitle()));
 
         return $this->redirectToRoute('task_list');
     }
