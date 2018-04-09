@@ -5,7 +5,6 @@ namespace AppBundle\Command;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use AppBundle\Entity\User;
 use AppBundle\Entity\Task;
@@ -13,14 +12,12 @@ use AppBundle\Entity\Task;
 class UpdateOldTasksCommand extends Command
 {
     private $em;
-    private $encoder;
 
-    public function __construct(EntityManagerInterface $em, UserPasswordEncoderInterface $encoder)
+    public function __construct(EntityManagerInterface $em)
     {
         parent::__construct();
 
         $this->em = $em;
-        $this->encoder = $encoder;
     }
 
     protected function configure()
@@ -76,11 +73,9 @@ class UpdateOldTasksCommand extends Command
     private function createAnonymousUser()
     {
         $anonymous = new User();
-        $plainPassword = 'anonymousPassword';
-        $encoded = $this->encoder->encodePassword($anonymous, $plainPassword);
 
         $anonymous->setUsername('Anonymous');
-        $anonymous->setPassword($encoded);
+        $anonymous->setPassword('anonymousPassword');
         $anonymous->setEmail('anonymous@anonym.ous');
         $anonymous->setRoles(['ROLE_USER']);
 

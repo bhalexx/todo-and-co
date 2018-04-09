@@ -41,7 +41,7 @@ class User implements UserInterface
     private $email;
 
     /**
-     * @ORM\OneToMany(targetEntity="Task", mappedBy="author", cascade={"remove"})
+     * @ORM\OneToMany(targetEntity="Task", mappedBy="author", cascade={"persist", "remove"})
      */
     private $tasks;
 
@@ -176,7 +176,7 @@ class User implements UserInterface
     public function addTask(Task $task)
     {
         $this->tasks[] = $task;
-        $task->setUser($this);
+        $task->setAuthor($this);
 
         return $this;
     }
