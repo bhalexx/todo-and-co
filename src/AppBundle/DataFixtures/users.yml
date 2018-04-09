@@ -1,0 +1,20 @@
+user_1:
+  username: bhalexx
+  password: bhalexx
+  email: bhalexx@email.com
+  roles: ['ROLE_ADMIN']
+user_2:
+  username: solo
+  password: solo
+  email: solo@email.com
+  roles: ['ROLE_USER']
+user_3:
+  username: yoda
+  password: yoda
+  email: yoda@email.com
+  roles: ['ROLE_USER']
+user_4:
+  username: darkdark
+  password: darkdark
+  email: darkdark@email.com
+  roles: ['ROLE_USER']
