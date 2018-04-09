@@ -13,8 +13,16 @@ services:
     resource: '../../src/AppBundle/*'
     exclude: '../../src/AppBundle/{Entity,Repository}'
 
-  command.fixtures.load:
+  command.oldtasks.update:
     class: AppBundle\Command\UpdateOldTasksCommand
+    arguments:
+      - '@doctrine.orm.entity_manager'
+      - '@security.password_encoder'
+    tags:
+      -  { name: console.command }
+
+  command.fixtures.load:
+    class: AppBundle\Command\LoadFixturesCommand
     arguments:
       - '@doctrine.orm.entity_manager'
       - '@security.password_encoder'

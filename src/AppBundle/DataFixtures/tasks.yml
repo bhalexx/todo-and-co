@@ -1,0 +1,45 @@
+task_1:
+  title: Ménage
+  content: Nettoyer, balayer, astiquer. Kaz la toujou penpan. La maison est toujours propre. Ba'w manjé, baw lanmou.
+  author: 1
+  isDone: true
+task_2:
+  title: Courses
+  content: Acheter du fromage de chèvre
+  author: 1
+  isDone: false
+task_3:
+  title: Diplôme
+  content: Terminer ma formation OpenClassRooms et obtenir un diplôme !
+  author: 1
+  isDone: false
+task_4:
+  title: Faucon Millenium
+  content: Récupérer mon Faucon Millenium et prendre le large avec Chewie.
+  author: 2
+  isDone: false
+task_5:
+  title: Bonus
+  content: Embrasser une princesse
+  author: 2
+  isDone: true
+task_6:
+  title: Réflexion
+  content: Méditer au sujet du jeune Anakin.
+  author: 3
+  isDone: false
+task_7:
+  title: Sport
+  content: M'inscrire dans une salle de sport pour ressembler à mon cousin germain Hulk.
+  author: 3
+  isDone: false
+task_8:
+  title: Confession
+  content: Annoncer à Luke que je suis son père.
+  author: 4
+  isDone: true
+task_9:
+  title: Hygiène
+  content: Nettoyer les traces de pizza sur mon casque.
+  author: 4
+  isDone: false
