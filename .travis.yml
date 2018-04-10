@@ -1,7 +1,7 @@
 language: php
-# sudo: false
+sudo: enabled
 php:
-  - '5.5.9'
+  - '7.2'
 
 install:
   - composer install
