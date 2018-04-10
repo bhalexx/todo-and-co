@@ -41,7 +41,7 @@ class UserTest extends SetupTest
 
         $this->entityManager->flush();
 
-        $this->assertSame(5, $user->getId());
+        $this->assertSame(6, $user->getId());
     }
 
     public function testUsername()

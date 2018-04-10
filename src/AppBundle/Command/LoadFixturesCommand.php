@@ -40,11 +40,11 @@ class LoadFixturesCommand extends Command
         $this->application = $this->getApplication();
         $this->application->setAutoExit(false);
 
-        // if ($input->getOption('environment') === 'test') {
+        if ($input->getOption('environment') === 'test') {
             // Drop database
             $output->writeln('Dropping database');
             $this->dropDatabase();
-        // }
+        }
 
         // Prepare database environment
         $output->writeln('Create database');
