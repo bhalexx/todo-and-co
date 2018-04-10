@@ -58,11 +58,25 @@ class UserController extends Controller
         if ($form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', "L'utilisateur a bien été modifié");
+            $this->addFlash('success', "L'utilisateur a bien été modifié.");
 
             return $this->redirectToRoute('user_list');
         }
 
         return $this->render('user/edit.html.twig', ['form' => $form->createView(), 'user' => $user]);
+    }
+
+    /**
+     * @Route("/users/{id}/delete", name="user_delete")
+     */
+    public function deleteAction(User $user, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($user);
+        $em->flush();
+
+        $this->addFlash('success', 'L\'utilisateur a bien été supprimé.');
+
+        return $this->redirectToRoute('user_list');
     }
 }

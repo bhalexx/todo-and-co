@@ -11,7 +11,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * @ORM\Table("user")
  * @ORM\Entity
- * @UniqueEntity("email")
+ * @UniqueEntity(fields={"username"}, message="Ce nom est déjà utilisé par un utilisateur.")
+ * @UniqueEntity(fields={"email"}, message="Cet email est déjà utilisé par un utilisateur.")
  */
 class User implements UserInterface
 {
@@ -36,12 +37,12 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=60, unique=true)
      * @Assert\NotBlank(message="Vous devez saisir une adresse email.")
-     * @Assert\Email(message="Le format de l'adresse n'est pas correcte.")
+     * @Assert\Email(message="Le format de l'adresse email n'est pas correct.")
      */
     private $email;
 
     /**
-     * @ORM\OneToMany(targetEntity="Task", mappedBy="author", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity="Task", mappedBy="author", cascade={"remove"})
      */
     private $tasks;
 

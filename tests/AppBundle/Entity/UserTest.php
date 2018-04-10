@@ -41,7 +41,7 @@ class UserTest extends SetupTest
 
         $this->entityManager->flush();
 
-        $this->assertSame(6, $user->getId());
+        $this->assertNotNull($user->getId());
     }
 
     public function testUsername()
@@ -68,7 +68,7 @@ class UserTest extends SetupTest
     {
         $user = new User();
         $user->setUsername('Leia');
-        $user->setEmail('leia@test.com');
+        $user->setEmail('mail@test.com');
 
         $errors = $this->validator->validate($user);
         $this->assertEquals(1, count($errors));
@@ -97,7 +97,7 @@ class UserTest extends SetupTest
     public function testEmailValidation()
     {
         $user = new User();
-        $user->setUsername('Leia');
+        $user->setUsername('Luke');
         $user->setEmail(null);
 
         $errors = $this->validator->validate($user);
@@ -107,7 +107,7 @@ class UserTest extends SetupTest
     public function testEmailUnicityValidation()
     {
         $user = new User();
-        $user->setUsername('Leia');
+        $user->setUsername('Luke');
         $user->setEmail('leia@test.com');
 
         $errors = $this->validator->validate($user);

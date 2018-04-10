@@ -45,7 +45,7 @@ class TaskTest extends SetupTest
 
         $this->entityManager->flush();
 
-        $this->assertSame(10, $task->getId());
+        $this->assertNotNull($task->getId());
     }
 
     public function testTitle()
