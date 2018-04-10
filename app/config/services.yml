@@ -15,17 +15,13 @@ services:
 
   command.oldtasks.update:
     class: AppBundle\Command\UpdateOldTasksCommand
-    arguments:
-      - '@doctrine.orm.entity_manager'
-      - '@security.password_encoder'
+    arguments: ['@doctrine.orm.entity_manager']
     tags:
       -  { name: console.command }
 
   command.fixtures.load:
     class: AppBundle\Command\LoadFixturesCommand
-    arguments:
-      - '@doctrine.orm.entity_manager'
-      - '@security.password_encoder'
+    arguments: ['@doctrine.orm.entity_manager']
     tags:
       -  { name: console.command }
 
@@ -38,3 +34,10 @@ services:
     arguments: ["@twig"]
     tags:
       - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+  app.doctrine_listener.user_creation:
+    class: AppBundle\DoctrineListener\UserCreationSubscriber
+    arguments:
+      - '@security.password_encoder'
+    tags:
+      - { name: doctrine.event_subscriber, connection: default }

@@ -7,7 +7,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Yaml\Yaml;
 use Doctrine\ORM\EntityManagerInterface;
 use AppBundle\Entity\User;
@@ -16,15 +15,13 @@ use AppBundle\Entity\Task;
 class LoadFixturesCommand extends Command
 {
     private $em;
-    private $encoder;
     private $application;
 
-    public function __construct(EntityManagerInterface $em, UserPasswordEncoderInterface $encoder)
+    public function __construct(EntityManagerInterface $em)
     {
         parent::__construct();
 
         $this->em = $em;
-        $this->encoder = $encoder;
     }
 
     protected function configure()
@@ -119,7 +116,7 @@ class LoadFixturesCommand extends Command
         foreach ($users as $data) {
             $user = new User();
             $user->setUsername($data['username']);
-            $user->setPassword($this->encoder->encodePassword($user, $data['password']));
+            $user->setPassword($data['password']);
             $user->setEmail($data['email']);
             $user->setRoles($data['roles']);
 
