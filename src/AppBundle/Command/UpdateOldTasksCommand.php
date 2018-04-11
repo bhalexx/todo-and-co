@@ -11,13 +11,13 @@ use AppBundle\Entity\Task;
 
 class UpdateOldTasksCommand extends Command
 {
-    private $em;
+    private $entityManager;
 
-    public function __construct(EntityManagerInterface $em)
+    public function __construct(EntityManagerInterface $entityManager)
     {
         parent::__construct();
 
-        $this->em = $em;
+        $this->entityManager = $entityManager;
     }
 
     protected function configure()
@@ -37,7 +37,7 @@ class UpdateOldTasksCommand extends Command
         // Get anonymous user
         $anonymous = $this->getAnonymousUser();
 
-        $tasks = $this->em->getRepository('AppBundle:Task')->findAll();
+        $tasks = $this->entityManager->getRepository('AppBundle:Task')->findAll();
         $count = 0;
         foreach ($tasks as $task) {
             if (null === $task->getAuthor()) {
@@ -45,7 +45,7 @@ class UpdateOldTasksCommand extends Command
                 $count++;
             }
         }
-        $this->em->flush();
+        $this->entityManager->flush();
 
         $feedback = $count === 0 ? 'No task without author were found.' : 'All users without author have been updated with anonymous author';
 
@@ -59,7 +59,7 @@ class UpdateOldTasksCommand extends Command
      */
     private function getAnonymousUser()
     {
-        $existing = $this->em->getRepository('AppBundle:User')->findOneByUsername('Anonymous');
+        $existing = $this->entityManager->getRepository('AppBundle:User')->findOneByUsername('Anonymous');
         $user = $existing !== null ?: $this->createAnonymousUser();
 
         return $user;
@@ -79,8 +79,8 @@ class UpdateOldTasksCommand extends Command
         $anonymous->setEmail('anonymous@anonym.ous');
         $anonymous->setRoles(['ROLE_USER']);
 
-        $this->em->persist($anonymous);
-        $this->em->flush();
+        $this->entityManager->persist($anonymous);
+        $this->entityManager->flush();
 
         return $anonymous;
     }

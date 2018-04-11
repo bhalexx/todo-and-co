@@ -14,14 +14,14 @@ use AppBundle\Entity\Task;
 
 class LoadFixturesCommand extends Command
 {
-    private $em;
+    private $entityManager;
     private $application;
 
-    public function __construct(EntityManagerInterface $em)
+    public function __construct(EntityManagerInterface $entityManager)
     {
         parent::__construct();
 
-        $this->em = $em;
+        $this->entityManager = $entityManager;
     }
 
     protected function configure()
@@ -104,7 +104,7 @@ class LoadFixturesCommand extends Command
         //Load tasks
         $this->loadTasks($tasks);
 
-        $this->em->flush();
+        $this->entityManager->flush();
     }
 
     /**
@@ -120,9 +120,9 @@ class LoadFixturesCommand extends Command
             $user->setEmail($data['email']);
             $user->setRoles($data['roles']);
 
-            $this->em->persist($user);
+            $this->entityManager->persist($user);
         }
-        $this->em->flush();
+        $this->entityManager->flush();
     }
 
     /**
@@ -135,10 +135,10 @@ class LoadFixturesCommand extends Command
             $task = new Task();
             $task->setTitle($data['title']);
             $task->setContent($data['content']);
-            $task->setAuthor($this->em->getRepository('AppBundle:User')->findOneById($data['author']));
+            $task->setAuthor($this->entityManager->getRepository('AppBundle:User')->findOneById($data['author']));
             $task->toggle($data['isDone']);
 
-            $this->em->persist($task);
+            $this->entityManager->persist($task);
         }
     }
 }
