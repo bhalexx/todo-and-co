@@ -17,7 +17,7 @@ class UserType extends AbstractType
     public function __construct($hierarchyRoles)
     {
         $roles = array();
-        array_walk_recursive($hierarchyRoles, function($val, $key) use (&$roles) {
+        array_walk_recursive($hierarchyRoles, function($val) use (&$roles) {
             $roles[$val] = $val;
         });
 
