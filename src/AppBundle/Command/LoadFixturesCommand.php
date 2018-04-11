@@ -50,9 +50,9 @@ class LoadFixturesCommand extends Command
         $output->writeln('Create database');
         $this->createDatabase();
 
-        // Create database schentityManagera
-        $output->writeln('Create database schentityManagera');
-        $this->createDatabaseSchentityManagera();
+        // Create database schema
+        $output->writeln('Create database schema');
+        $this->createDatabaseSchema();
 
         //Load fixtures
         $this->loadFixtures();
@@ -79,11 +79,11 @@ class LoadFixturesCommand extends Command
     }
 
     /**
-     * Executes command to create database schentityManagera
+     * Executes command to create database schema
      */
-    private function createDatabaseSchentityManagera()
+    private function createDatabaseSchema()
     {
-        $options = array('command' => 'doctrine:schentityManagera:create');
+        $options = array('command' => 'doctrine:schema:create');
         $this->application->run(new ArrayInput($options));
     }
 
