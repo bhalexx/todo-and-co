@@ -27,7 +27,7 @@ This project also uses:
 - [jQuery][8] - javascript frameword
 - [Isotope][9] - for filtering tasks
 
-Those dependencies are included by CDN in layout and concerned views.
+Those dependencies are included from CDN in layout and concerned views.
 
 ### Installation
 1. Clone this repository on your local machine by using this command line in your folder `git clone https://github.com/bhalexx/todo-and-co.git`.
