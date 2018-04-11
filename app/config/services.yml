@@ -13,14 +13,12 @@ services:
     resource: '../../src/AppBundle/*'
     exclude: '../../src/AppBundle/{Entity,Repository}'
 
-  command.oldtasks.update:
-    class: AppBundle\Command\UpdateOldTasksCommand
+  AppBundle\Command\UpdateOldTasksCommand:
     arguments: ['@doctrine.orm.entity_manager']
     tags:
       -  { name: console.command }
 
-  command.fixtures.load:
-    class: AppBundle\Command\LoadFixturesCommand
+  AppBundle\Command\LoadFixturesCommand:
     arguments: ['@doctrine.orm.entity_manager']
     tags:
       -  { name: console.command }
@@ -29,14 +27,12 @@ services:
     arguments: ['%security.role_hierarchy.roles%']
     tags: ['form.type']
 
-  twigdate.listener_request:
-    class: AppBundle\Service\TwigDateRequestListener
+  AppBundle\Service\TwigDateRequestListener:
     arguments: ["@twig"]
     tags:
       - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
 
-  app.doctrine_listener.user_creation:
-    class: AppBundle\DoctrineListener\UserCreationSubscriber
+  AppBundle\DoctrineListener\UserCreationSubscriber:
     arguments:
       - '@security.password_encoder'
     tags:
