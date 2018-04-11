@@ -7,7 +7,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Yaml\Yaml;
+use Symfony\Component\Yaml\Parser;
 use Doctrine\ORM\EntityManagerInterface;
 use AppBundle\Entity\User;
 use AppBundle\Entity\Task;
@@ -95,8 +95,9 @@ class LoadFixturesCommand extends Command
         $kernel = $this->application->getKernel();
 
         // Parse fixtures YAML files
-        $users = Yaml::parse(file_get_contents($kernel->locateResource('@AppBundle/DataFixtures/users.yml'), true));
-        $tasks = Yaml::parse(file_get_contents($kernel->locateResource('@AppBundle/DataFixtures/tasks.yml'), true));
+        $yaml = new Parser();
+        $users = $yaml->parse(file_get_contents($kernel->locateResource('@AppBundle/DataFixtures/users.yml'), true));
+        $tasks = $yaml->parse(file_get_contents($kernel->locateResource('@AppBundle/DataFixtures/tasks.yml'), true));
 
         // Load users
         $this->loadUsers($users);

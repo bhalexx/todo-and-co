@@ -69,7 +69,7 @@ class UserController extends Controller
     /**
      * @Route("/users/{id}/delete", name="user_delete")
      */
-    public function deleteAction(User $user, Request $request)
+    public function deleteAction(User $user)
     {
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($user);
