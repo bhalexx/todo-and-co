@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}
+    Oops
+{% endblock %}
+
+{% block header_content %}
+    Il semblerait que quelque chose se passe mal ici !
+{% endblock %}
+
+{% block body %}
+    <div class="row justify-content-md-center">
+        <div class="col-md-4 text-center">
+            <p>Retentez votre chance, sinon montrez-vous patient(e), nous allons vite résoudre le problème.</p>
+            <a href="{{ path('homepage') }}" class="btn btn-info">Revenir à l'accueil</a>
+        </div>
+    </div>
+{% endblock %}
