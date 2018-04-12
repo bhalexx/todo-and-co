@@ -55,10 +55,12 @@ Coverage files can be found in [`audit/coverage`][14] folder.
 *Some words about application performances...*
 
 ### Documentation
-You can find a documentation about authentication in [`documentation`][15] folder.
+In [`documentation`][15] folder you can find:
+- a [technical documentation][16] about *authentication*,
+- a [full review][17] of *what have been done* on this project.
 
 ### Contribution
-To contribute to this project read [How to contribute instructions][16].
+To contribute to this project read [How to contribute instructions][18].
 
 ---
 
@@ -78,6 +80,8 @@ Thanks for reading!
 [12]: https://travis-ci.org
 [13]: https://symfony.com/doc/3.4/testing/bootstrap.html
 [14]: https://github.com/bhalexx/todo-and-co/tree/master/audit/coverage
-[15]: #
-[16]: https://github.com/bhalexx/todo-and-co/tree/master/CONTRIBUTING.md
+[15]: https://github.com/bhalexx/todo-and-co/tree/master/documentation
+[16]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/Authentication.md
+[17]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/WhatHaveBeenDone.md
+[18]: https://github.com/bhalexx/todo-and-co/tree/master/CONTRIBUTING.md
 
