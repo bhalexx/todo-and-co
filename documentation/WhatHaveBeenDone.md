@@ -74,14 +74,21 @@ Security |  83.33% (15/18) | 60.00% (3/5) | 0.00% (0/1)
 Service | 100.00% (6/6) | 100.00% (2/2) | 100.00% (1/1)
 **Total** | **97.56% (240/246)** |  **93.06% (67/72)** | **76.92% (10/13)**
 
-See also [here][2] to get more informations about code coverage.
+See also [here][2] to see more informations about code coverage.
+
+Continuous integration has been implemented with [Travis CI][13].
+
+A command was created to load fixtures to the application for tests but this command is also available in dev mode: `php bin/console todolist:fixtures:load`.
 
 #### Audit
 Application performances were analyzed with [BlackFire][3] tool.
 
-Performances graphs and full code audit can be found in [`audit\code`][4] folder.
+Performances graphs and full code audit can be found in [here][4].
 
 #### Documentation
+
+##### UML
+UML diagrams have been done and can be found in [`documentation\diagrams`][14] folder
 
 ##### How to contribute
 A [full guide for contribution][5] has been written to help future collaborators.
@@ -142,11 +149,12 @@ While working on this application some other various things have been improved:
 
 ---
 
+Thanks for reading!
 
 [1]: https://github.com/saro0h/projet8-TodoList
-[2]: https://github.com/bhalexx/todo-and-co/tree/master/audit/coverage
+[2]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/coverage
 [3]: https://blackfire.io
-[4]: https://github.com/bhalexx/todo-and-co/tree/master/audit/code
+[4]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/Audit.pdf
 [5]: https://github.com/bhalexx/todo-and-co/blob/master/CONTRIBUTING.md
 [6]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/Authentication.md
 [7]: https://openclassrooms.com
@@ -155,3 +163,5 @@ While working on this application some other various things have been improved:
 [10]: https://fontawesome.com
 [11]: https://jquery.com
 [12]: https://symfony.com/doc/3.4/best_practices/security.html#authorization-i-e-denying-access
+[13]: https://travis-ci.org
+[14]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/diagrams
