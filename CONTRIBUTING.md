@@ -74,9 +74,10 @@ Now you just have to wait our review before merging your work.
 
 ## Useful resources
 
-- [GitHub help][14] - GitHub full documentation
-- [Try Git][15] - Learn Git in 15 minutes from within your browser for free
-- [GitHub Git CheatSheet][16] - PDF
+- A [technical documentation][14] about *authentication* in To Do List App
+- [GitHub help][15] - GitHub full documentation
+- [Try Git][16] - Learn Git in 15 minutes from within your browser for free
+- [GitHub Git CheatSheet][17] - PDF
 
 Feel free to contact me in case of need: [@bhalexx][13]
 
@@ -95,6 +96,7 @@ Thanks for reading and contributing!
 [11]: https://phpunit.de/documentation.html
 [12]: https://symfony.com/doc/3.4/testing.html
 [13]: https://github.com/bhalexx
-[14]: https://help.github.com
-[15]: https://try.github.io
-[16]: https://education.github.com/git-cheat-sheet-education.pdf
+[14]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/Authentication.md
+[15]: https://help.github.com
+[16]: https://try.github.io
+[17]: https://education.github.com/git-cheat-sheet-education.pdf
