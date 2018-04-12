@@ -44,23 +44,26 @@ Those dependencies are included from CDN in layout and concerned views.
 #### Tests
 Continuous integration has been implemented with [Travis CI][12].
 
-To run tests manually you only have run this command: `vendor/bin/phpunit.bat`.
+To run tests manually you only have to run this command: `vendor/bin/phpunit.bat`.
 
 A custom bootstrap process file has been created to drop and recreate test database. Read [this][13] for more informations.
 
-#### Code coverage
-Coverage files can be found in [`audit/coverage`][14] folder.
-
 #### Audit
-*Some words about application performances...*
+Application performances were analyzed with [BlackFire][15] tool.
+
+Performances graphs and full code audit can be found in [here][16].
 
 ### Documentation
-In [`documentation`][15] folder you can find:
-- a [technical documentation][16] about *authentication*,
-- a [full review][17] of *what have been done* on this project.
+In [`documentation`][17] folder you can find:
+- a [technical documentation][18] about *authentication*,
+- a [full review][19] of *what have been done* on this project.
+- initial and final [code coverage][14].
+- UML diagrams in [`diagrams`][21] folder.
 
 ### Contribution
-To contribute to this project read [How to contribute instructions][18].
+Feel free to contribute to our project! You may for example be the one who will help us to reach 100.00% code coverage! ;)
+
+To contribute to this project read [How to contribute instructions][20].
 
 ---
 
@@ -79,9 +82,12 @@ Thanks for reading!
 [11]: https://codeclimate.com
 [12]: https://travis-ci.org
 [13]: https://symfony.com/doc/3.4/testing/bootstrap.html
-[14]: https://github.com/bhalexx/todo-and-co/tree/master/audit/coverage
-[15]: https://github.com/bhalexx/todo-and-co/tree/master/documentation
-[16]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/Authentication.md
-[17]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/WhatHaveBeenDone.md
-[18]: https://github.com/bhalexx/todo-and-co/tree/master/CONTRIBUTING.md
+[14]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/coverage
+[15]: https://blackfire.io
+[16]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/Audit.pdf
+[17]: https://github.com/bhalexx/todo-and-co/tree/master/documentation
+[18]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/Authentication.md
+[19]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/WhatHaveBeenDone.md
+[20]: https://github.com/bhalexx/todo-and-co/tree/master/CONTRIBUTING.md
+[2]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/diagrams
 

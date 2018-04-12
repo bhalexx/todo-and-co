@@ -52,7 +52,6 @@ Now let's analyze how it has been done in our `app\config\security.yml` file.
 
 ```
     security:
-
 ```
 
 ### Encoders
@@ -160,7 +159,7 @@ We could have define our users management area security in `access_control` like
 ```
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        **- { path: ^/users, roles: ROLE_ADMIN }**
+        - { path: ^/users, roles: ROLE_ADMIN }
         - { path: ^/, roles: ROLE_USER }
 ```
 
@@ -230,5 +229,5 @@ Thanks for reading and enjoy!
 
 [1]: https://symfony.com/doc/3.4/components/security.html
 [2]: https://symfony.com/doc/3.4/best_practices/security.html#authorization-i-e-denying-access
-[3]: https://github.com/bhalexx/todo-and-co/blob/master/documentation/Authentication.md#How-it-is-done
+[3]: https://github.com/bhalexx/todo-and-co/blob/master/documentation/Authentication.md#how-it-is-done
 [4]: https://symfony.com/doc/3.4/security/voters.html
