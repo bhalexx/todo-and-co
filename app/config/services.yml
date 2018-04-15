@@ -32,7 +32,7 @@ services:
     tags:
       - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
 
-  AppBundle\DoctrineListener\UserCreationSubscriber:
+  AppBundle\DoctrineListener\UserSubscriber:
     arguments:
       - '@security.password_encoder'
     tags:

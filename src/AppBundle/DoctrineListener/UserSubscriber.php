@@ -7,7 +7,7 @@ use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use AppBundle\Entity\User;
 
-class UserCreationSubscriber implements EventSubscriber
+class UserSubscriber implements EventSubscriber
 {
     /**
      * @var UserPasswordEncoderInterface
