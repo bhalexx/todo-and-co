@@ -143,7 +143,7 @@ While working on this application some other various things have been improved:
 
 - Changed authorization security for users management: not anymore in `config\security.yml` `access_control` parameter but with the `@Security` annotation on `Controller\UserController` (as mentionned in [Symfony security best practices][12]).
 - In `Form\UserType` roles are retrieved dynamically from `security.role_hierarchy.roles` (by a service to inject properly dependency). That way we still have to edit only one file when we want to edit roles.
-- User password encoding has been moved from `Controller\UserController` to `DoctrineListener\UserCreationSubscriber`.
+- User password encoding has been moved from `Controller\UserController` to `DoctrineListener\UserSubscriber`.
 - User deletion method was created in `Controller\UserController`.
 - User unicity constraints on username and email were changed in `Entity\User` entity.
 
