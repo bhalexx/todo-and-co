@@ -71,7 +71,7 @@ Thanks for reading!
 
 [1]: https://openclassrooms.com
 [2]: https://github.com/saro0h/projet8-TodoList
-[3]: #
+[3]: http://www.todolist.bhalexx.me/
 [4]: https://getcomposer.org
 [5]: https://phpunit.de
 [6]: https://getbootstrap.com
