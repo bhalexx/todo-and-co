@@ -24,7 +24,7 @@ This project uses [PHPUnit][5] for unit and functional tests. This dependency is
 This project also uses:
 - [Bootstrap 4][6] - CSS framework
 - [Font Awesome 5][7] - beautiful icons
-- [jQuery][8] - javascript frameword
+- [jQuery][8] - javascript framework
 - [Isotope][9] - for filtering tasks
 
 Those dependencies are included from CDN in layout and concerned views.

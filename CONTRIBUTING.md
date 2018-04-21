@@ -3,7 +3,7 @@
 TodoList App is a collaborative project. Follow those steps to help and contribute properly to this project.
 
 ## Requirements
-First of all be sure your environment:
+First of all be sure your environment has:
 
 - [Git][1]
 - [PHPunit][2]
@@ -17,7 +17,7 @@ Fork master branch of this project to your GitHub account by clicking on the **F
 ### 2. Clone your fork
 A *clone* is a downloaded version of a repository. Cloning our fork lets you download a copy of the repository to your computer.
 
-Clone the fork on your locale machine by running this command line: `git clone https://github.com/bhalexx/todo-and-co.git`. Your remote repo on GitHub is called origin.
+Clone the fork on your locale machine by running this command line: `git clone {your fork uri}`. Your remote repo on GitHub is called origin.
 
 In your new `todo-and-co` folder add the original repository as a remote called upstream by running this command: `git remote add upstream https://github.com/bhalexx/todo-and-co.git`. Now your local project has 2 remotes:
 
@@ -56,7 +56,6 @@ This project has unit and functional tests so run them regularly during your dev
 
 Implement your own tests. Attention to not decrease code coverage! You can find code coverage in [`audit/coverage`][10] folder.
 
-
 Useful documentation:
 
 - [PHPUnit documentation][11]
@@ -79,7 +78,7 @@ Now you just have to wait our review before merging your work.
 - [Try Git][16] - Learn Git in 15 minutes from within your browser for free
 - [GitHub Git CheatSheet][17] - PDF
 
-Feel free to contact me in case of need: [@bhalexx][13]
+Feel free to contact us in case of need: [@bhalexx][13]
 
 Thanks for reading and contributing!
 
