@@ -89,5 +89,4 @@ Thanks for reading!
 [18]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/Authentication.md
 [19]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/WhatHaveBeenDone.md
 [20]: https://github.com/bhalexx/todo-and-co/tree/master/CONTRIBUTING.md
-[2]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/diagrams
-
+[21]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/diagrams

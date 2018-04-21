@@ -146,6 +146,7 @@ While working on this application some other various things have been improved:
 - User password encoding has been moved from `Controller\UserController` to `DoctrineListener\UserSubscriber`.
 - User deletion method was created in `Controller\UserController`.
 - User unicity constraints on username and email were changed in `Entity\User` entity.
+- Used [PHP-CS][15] tool to fix code and follow standards.
 
 ---
 
@@ -165,3 +166,4 @@ Thanks for reading!
 [12]: https://symfony.com/doc/3.4/best_practices/security.html#authorization-i-e-denying-access
 [13]: https://travis-ci.org
 [14]: https://github.com/bhalexx/todo-and-co/tree/master/documentation/diagrams
+[15]: https://cs.sensiolabs.org
