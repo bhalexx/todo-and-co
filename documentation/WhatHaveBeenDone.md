@@ -23,11 +23,11 @@ Older tasks without author may be updated with the `php bin/console todolist:old
 
 *Previously*
 
-We were not able to choose a role to user on creation.
+We were not able to choose a role for user on creation.
 
 *Now*
 
-Two roles have been implemented:
+Two roles have been implemented and may now be assigned to user on creation:
 
 - ROLE_USER
 - ROLE_ADMIN
@@ -74,7 +74,7 @@ Security |  83.33% (15/18) | 60.00% (3/5) | 0.00% (0/1)
 Service | 100.00% (6/6) | 100.00% (2/2) | 100.00% (1/1)
 **Total** | **97.56% (240/246)** |  **93.06% (67/72)** | **76.92% (10/13)**
 
-See also [here][2] to see more informations about code coverage.
+See also [here][2] to read more informations about code coverage.
 
 Continuous integration has been implemented with [Travis CI][13].
 
@@ -83,12 +83,12 @@ A command was created to load fixtures to the application for tests but this com
 #### Audit
 Application performances were analyzed with [BlackFire][3] tool.
 
-Performances graphs and full code audit can be found in [here][4].
+Performances graphs and full code audit can be found in [this documentation][4].
 
 #### Documentation
 
 ##### UML
-UML diagrams have been done and can be found in [`documentation\diagrams`][14] folder
+UML diagrams have been created and can be found in [`documentation\diagrams`][14] folder.
 
 ##### How to contribute
 A [full guide for contribution][5] has been written to help future collaborators.
@@ -98,7 +98,7 @@ A [technical documentation][6] has been written about authentication. This docum
 
 In this documentation, it is possible for a beginner with the Symfony framework to understand:
 
-- which file (s) to edit and why
+- which file(s) to edit and why
 - how authentication works
 - and where are the users stored.
 
@@ -122,11 +122,11 @@ While working on this application some other various things have been improved:
 - Created `Security\TaskVoter` for task edition and deletion.
 - Task edition: only authors may edit their own tasks.
 - Implemented JS library [Isotope][8] to display done tasks (missing feature), but also to filter current user tasks.
-- Fixed toggling task flag feedback (same feedback for done and undone tasks on toggling).
+- Fixed toggling task flag feedback (previously: same feedback for done and undone tasks on toggling).
 
 ##### Assets
 
-- Fixed the two errors in console.
+- Fixed the two 404 errors in console.
 - Changed CSS file name from uncoherent `shop-homepage.css` to `main.css`.
 - Removed non used anymore `web\img\todolist_homepage.jpg`.
 - Renamed `web\img\todolist_content.jpg` to `web\img\todolist.jpg`.
@@ -146,7 +146,7 @@ While working on this application some other various things have been improved:
 - User password encoding has been moved from `Controller\UserController` to `DoctrineListener\UserSubscriber`.
 - User deletion method was created in `Controller\UserController`.
 - User unicity constraints on username and email were changed in `Entity\User` entity.
-- Used [PHP-CS][15] tool to fix code and follow standards.
+- [PHP-CS][15] tool was used to fix code and follow standards.
 
 ---
 

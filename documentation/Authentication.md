@@ -23,7 +23,7 @@ Authorization is the process managed by access control which defines if you are 
 
 For example you may have an admin area only accessible by users with administrator rights so you don't want any other type of user to access this section. Access Control will check if authenticated user has authorization to access resource.
 
-Read more about Security Component on [official documentation][1]
+Read more about Security Component on [official documentation][1].
 
 ## How it works
 The security system is configured in `app\config\security.yml` file.
@@ -136,7 +136,7 @@ Users will authenticate with a login form so we enable `form_login` under our `m
 
 Firewall will automatically intercept and transform any submitted form to the `/login_check` URL so we don't have to implement a controller or method for this URL.
 
-The `always_use_default_target` path ignore the previously requested URL and will always redirect to `default_target_path` after any successful login. So if you want redirect user to the previous requested URL after he successfully logged in, just disable the `always_use_default_target` parameter and remove the `default_target_path` one.
+The `always_use_default_target` path ignore the previously requested URL and will always redirect to `default_target_path` after any successful login. So if you want to redirect user to the previous requested URL after he successfully logged in, just disable the `always_use_default_target` parameter and remove the `default_target_path` one.
 
 By default the `logout` key is not configured. When users log out from any firewall their sessions become invalid.
 
