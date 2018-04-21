@@ -14,7 +14,8 @@ class TwigDateRequestListener
         $this->twig = $twig;
     }
 
-    public function onKernelRequest(GetResponseEvent $event) {
+    public function onKernelRequest(GetResponseEvent $event)
+    {
         $this->twig
                 ->getExtension('Twig_Extension_Core')
                 ->setTimezone('Europe/Paris');

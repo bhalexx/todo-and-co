@@ -6,7 +6,6 @@ require_once __DIR__.'/../app/AppKernel.php';
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
 
-
 $kernel = new AppKernel('test', true); // create a "test" kernel
 $kernel->boot();
 

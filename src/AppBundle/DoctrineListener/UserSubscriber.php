@@ -46,6 +46,5 @@ class UserSubscriber implements EventSubscriber
             // Encode password
             $entity->setPassword($this->encoder->encodePassword($entity, $entity->getPassword()));
         }
-
     }
 }

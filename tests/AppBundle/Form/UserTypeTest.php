@@ -14,7 +14,6 @@ use Symfony\Component\Form\Test\TypeTestCase;
 
 class UserTypeTest extends TypeTestCase
 {
-
     private $roles;
     private $validator;
 
